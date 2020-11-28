@@ -18,11 +18,15 @@ public class UserActivity2 extends AppCompatActivity implements View.OnClickList
         addContact.setOnClickListener(this);
     }
 
+
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.addContact:
                 addContactfunction();
+                break;
+
+
         }
     }
 
