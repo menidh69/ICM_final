@@ -4,34 +4,44 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.view.View;
-import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import android.view.View;
+import android.widget.Button;
+
+
+public class MainActivity extends AppCompatActivity {
 
     ImageButton addContact;
+
+    Button nuevaCita, nServicio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addContact = (ImageButton) findViewById(R.id.addContact);
-        addContact.setOnClickListener(this);
+
+
+        conexion con = new conexion(this, "icm_final", null, 1);
+
+        nuevaCita = (Button) findViewById(R.id.NuevaCita);
+        nServicio = (Button) findViewById(R.id.btn_nServicio);
+
+        nuevaCita.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, NuevaCita.class));
+            }
+        });
+
+        nServicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, NuevoServicio.class));
+            }
+        });
+
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.addContact:
-                addContactfunction();
-        }
-    }
-
-    public void addContactfunction(){
-        Intent intent = new Intent(Intent.ACTION_INSERT,
-                ContactsContract.Contacts.CONTENT_URI);
-        startActivity(intent);
-    }
+   
 
 }

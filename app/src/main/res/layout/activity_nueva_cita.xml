@@ -4,31 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FBE2E2"
-    tools:context=".MainActivity">
+    tools:context=".NuevaCita">
 
-    <Button
-        android:id="@+id/NuevaCita"
+    <EditText
+        android:id="@+id/et_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nueva cita"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Nombre"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.278" />
 
-
-    <Button
-        android:id="@+id/btn_nServicio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nuevo servicio"
+    <Spinner
+        android:id="@+id/comboServicios"
+        android:layout_width="243dp"
+        android:layout_height="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
+        app:layout_constraintVertical_bias="0.431" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
