@@ -20,12 +20,14 @@ public class conexion extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(constantes.crear_tabla_cliente);
         db.execSQL(constantes.crear_tabla_servicios);
+        db.execSQL(constantes.crear_tabla_citas);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int versionAntigua, int versionNueva) {
         db.execSQL("DROP TABLE IF EXISTS cliente");
         db.execSQL("DROP TABLE IF EXISTS servicios");
+        db.execSQL("DROP TABLE IF EXISTS citas");
         onCreate(db);
     }
 }
