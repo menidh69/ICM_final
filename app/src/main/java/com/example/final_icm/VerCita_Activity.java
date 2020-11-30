@@ -12,13 +12,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class VerCita_Activity extends AppCompatActivity implements View.OnClickListener {
 
-    Button guardar;
+    Button completar;
     int cita_id;
     TextView nombre, fecha, hora, precio, servicio;
+    String metodo;
     conexion con;
 
 
@@ -50,12 +49,13 @@ public class VerCita_Activity extends AppCompatActivity implements View.OnClickL
                 precio.setText(String.valueOf(cursor.getFloat(3)));
                 fecha.setText(cursor.getString(4));
                 hora.setText(cursor.getString(5));
+
             }
         }
 
 
-        guardar = (Button) findViewById(R.id.guardar_btn);
-        guardar.setOnClickListener(this);
+        completar = (Button) findViewById(R.id.completar_btn);
+        completar.setOnClickListener(this);
 
     }
 
@@ -74,8 +74,11 @@ public class VerCita_Activity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View view) {
         switch(view.getId()){
-            case R.id.guardar_btn:
-                startActivity(new Intent(VerCita_Activity.this, CompletarCita_Activity.class));
+            case R.id.completar_btn:
+                Intent intent = new Intent(VerCita_Activity.this, CompletarCita_Activity.class);
+                intent.putExtra("Precio", precio.getText());
+                intent.putExtra("ID", cita_id);
+                startActivity(intent);
         }
     }
 }

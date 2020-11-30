@@ -28,10 +28,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     ImageButton nuevaCita, addContact;
-    Button nServicio;
+    ImageButton nServicio;
     conexion con;
     List<Citas> citasArray;
     TableLayout table;
+    Button vercompletadas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,15 +42,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         con = new conexion(this, "icm_final", null, 1);
-
+        /*SQLiteDatabase db = con.getWritableDatabase();
+        con.onUpgrade(db, 3, 4);*/
         nuevaCita = (ImageButton) findViewById(R.id.NuevaCita);
-        nServicio = (Button) findViewById(R.id.btn_nServicio);
+        nServicio = (ImageButton) findViewById(R.id.btn_nServicio);
         addContact = (ImageButton) findViewById(R.id.addContact);
         table = (TableLayout) findViewById(R.id.table);
+        vercompletadas = (Button) findViewById(R.id.vercompletadas);
         addContact.setOnClickListener(this);
         nServicio.setOnClickListener(this);
         nuevaCita.setOnClickListener(this);
-
+        vercompletadas.setOnClickListener(this);
         consultarCitas();
 
     }
@@ -68,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_nServicio:
                 startActivity(new Intent(MainActivity.this, NuevoServicio.class));
                 break;
+            case R.id.vercompletadas:
+                startActivity(new Intent(MainActivity.this, CitasCompletadas_Activity.class));
         }
     }
 
@@ -83,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Citas citas = null;
         citasArray = new ArrayList<>();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM citas",null);
+        Cursor cursor = db.rawQuery("SELECT * FROM citas WHERE finalizado=0",null);
 
         while(cursor.moveToNext()){
             citas = new Citas();
