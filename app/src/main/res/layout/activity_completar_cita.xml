@@ -62,7 +62,8 @@
             android:id="@+id/radioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Efectivo" />
+            android:text="Efectivo"
+            android:checked="true"/>
 
         <RadioButton
             android:id="@+id/radioButton2"
@@ -72,7 +73,7 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/completar_guardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00E676"

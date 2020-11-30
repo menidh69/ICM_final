@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CompletarCita_Activity"></activity>
+        <activity android:name=".CitasCompletadas_Activity"></activity>
+        <activity android:name=".CompletarCita_Activity" />
         <activity android:name=".VerCita_Activity" />
         <activity android:name=".UserActivity2" />
         <activity android:name=".NuevoServicio" />

@@ -8,6 +8,7 @@ public class Citas {
     private String fecha;
     private String hora;
     private Integer finalizado;
+    private String metodo;
 
     public Citas(Integer id, String nombre, String servicio, float precio, String fecha, String hora) {
         this.id = id;
@@ -18,7 +19,7 @@ public class Citas {
         this.hora = hora;
     }
 
-    public Citas(){
+    public Citas() {
 
     }
 
@@ -76,5 +77,14 @@ public class Citas {
 
     public void setFinalizado(Integer finalizado) {
         this.finalizado = finalizado;
+    }
+
+
+    public String getMetodo() {
+        return metodo;
+    }
+
+    public void setMetodo(String metodo) {
+        this.metodo = metodo;
     }
 }
