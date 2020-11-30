@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class VerCita_Activity extends AppCompatActivity implements View.OnClickListener {
 
-    Button completar;
+    Button completar,editar,eliminar;
     int cita_id;
     TextView nombre, fecha, hora, precio, servicio;
     String metodo;
@@ -56,6 +56,10 @@ public class VerCita_Activity extends AppCompatActivity implements View.OnClickL
 
         completar = (Button) findViewById(R.id.completar_btn);
         completar.setOnClickListener(this);
+        editar = (Button) findViewById(R.id.editar_cita);
+        editar.setOnClickListener(this);
+        eliminar = (Button) findViewById(R.id.btn_eliminar);
+        eliminar.setOnClickListener(this);
 
     }
 
@@ -79,6 +83,17 @@ public class VerCita_Activity extends AppCompatActivity implements View.OnClickL
                 intent.putExtra("Precio", precio.getText());
                 intent.putExtra("ID", cita_id);
                 startActivity(intent);
+                break;
+            case R.id.editar_cita:
+                Intent intent2 = new Intent(VerCita_Activity.this, EditarCita.class);
+                intent2.putExtra("ID", cita_id);
+                startActivity(intent2);
+                break;
+            case R.id.btn_eliminar:
+                Intent intent3 = new Intent(VerCita_Activity.this, EliminarCita.class);
+                intent3.putExtra("ID", cita_id);
+                startActivity(intent3);
+                break;
         }
     }
 }
