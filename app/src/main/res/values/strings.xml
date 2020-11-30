@@ -2,4 +2,9 @@
     <string name="app_name">Final_ICM</string>
     <string name="left"><![CDATA[<]]></string>
     <string name="right"><![CDATA[>]]></string>
+    <string name="nombre_cliente">Nombre Cliente</string>
+    <string name="hora">Hora</string>
+    <string name="fecha">Fecha</string>
+    <string name="nuevo_servicio">Nuevo servicio</string>
+    <string name="mis_citas">Mis Citas</string>
 </resources>

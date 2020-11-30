@@ -1,6 +1,6 @@
 package com.example.final_icm.tablas;
 
-public class citas {
+public class Citas {
     private Integer id;
     private String nombre;
     private String servicio;
@@ -9,13 +9,17 @@ public class citas {
     private String hora;
     private Integer finalizado;
 
-    public citas(Integer id, String nombre, String servicio, float precio, String fecha, String hora) {
+    public Citas(Integer id, String nombre, String servicio, float precio, String fecha, String hora) {
         this.id = id;
         this.nombre = nombre;
         this.servicio = servicio;
         this.precio = precio;
         this.fecha = fecha;
         this.hora = hora;
+    }
+
+    public Citas(){
+
     }
 
     public Integer getId() {
